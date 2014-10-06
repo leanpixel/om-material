@@ -1,0 +1,201 @@
+@import "reset.less";
+
+@black-87: rgba(0,0,0,0.87);
+@black-54: rgba(0,0,0,0.54);
+@white-87: rgba(255,255,255,0.87);
+@white-54: rgba(255,255,255,0.54);
+
+.display-4 () {
+  font-family: "Roboto";
+  font-size: 112px;
+  font-weight: 300;
+  color: @black-54;
+  white-space: nowrap;
+  line-height: 1em;
+  // tracking -10
+}
+.display-3 () {
+  font-family: "Roboto";
+  font-size: 56px;
+  font-weight: 400;
+  color: @black-54;
+  white-space: nowrap;
+  line-height: 1em;
+  // tracking -5
+}
+.display-2 () {
+  font-family: "Roboto";
+  font-size: 45px;
+  font-weight: 400;
+  color: @black-54;
+  line-height: 48px;
+}
+.display-1 () {
+  font-family: "Roboto";
+  font-size: 34px;
+  font-weight: 400;
+  color: @black-54;
+  line-height: 40px;
+}
+.headline () {
+  font-family: "Roboto";
+  font-size: 24px;
+  font-weight: 400;
+  color: @black-87;
+  white-space: nowrap;
+  line-height: 1em;
+}
+.title (@color:@black-87) {
+  font-family: "Roboto";
+  font-size: 20px;
+  font-weight: 500;
+  color: @color;
+  white-space: nowrap;
+  line-height: 1em;
+  // tracking 5
+}
+.subhead () {
+  font-family: "Roboto";
+  font-size: 15px; // 16 device
+  font-weight: 400;
+  color: @black-87;
+  line-height: 28px;
+  // tracking 10
+}
+.body-2 () {
+  font-family: "Roboto";
+  font-size: 13px; // 14 device
+  font-weight: 500;
+  color: @black-87;
+  line-height: 24px;
+  // tracking 10
+}
+.body-1 (@color:@black-87) {
+  font-family: "Roboto";
+  font-size: 13px; // 14 device
+  font-weight: 400;
+  color: @color;
+  line-height: 20px;
+  // tracking 10
+}
+.caption (@color:@black-54) {
+  font-family: "Roboto";
+  font-size: 12px;
+  font-weight: 400;
+  color: @color;
+  white-space: nowrap;
+  line-height: 1em;
+  // tracking 20
+}
+.menu () {
+  font-family: "Roboto";
+  font-size: 13px; // 14 device
+  font-weight: 500;
+  color: @black-87;
+  white-space: nowrap;
+  line-height: 1em;
+  // tracking 10
+}
+.button () {
+  font-family: "Roboto";
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: @black-87;
+  white-space: nowrap;
+  line-height: 1em;
+  // tracking 10
+}
+
+.text-input () {
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 400;
+  color: @black-87;
+}
+.text-input-placeholder () {
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 400;
+  color: @black-54;
+}
+
+.shadow-1 {
+  box-shadow: 0 1px 1.5px 0 rgba(0,0,0,0.12);
+  // box-shadow: 0 1px 1px 0 rgba(0,0,0,0.24);
+}
+.shadow-2 {
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+  // box-shadow: 0 3px 3px 0 rgba(0,0,0,0.23);
+}
+.shadow-3 {
+  box-shadow: 0 10px 10px 0 rgba(0,0,0,0.19);
+  // box-shadow: 0 6px 3px 0 rgba(0,0,0,0.23);
+}
+.shadow-4 {
+  box-shadow: 0 14px 14px 0 rgba(0,0,0,0.25);
+  // box-shadow: 0 10px 5px 0 rgba(0,0,0,0.22);
+}
+.shadow-5 {
+  box-shadow: 0 19px 19px 0 rgba(0,0,0,0.30);
+  // box-shadow: 0 15px 6px 0 rgba(0,0,0,0.22);
+}
+
+
+// MATERIAL FIELDS
+.material.field {
+  @active-color: #000;
+  @saved-color: #12c700;
+  @invalid-color: red;
+
+  position: relative;
+  display: inline-block;
+  padding-top: 0.75em;
+
+  @-webkit-keyframes flash {
+    0% { border-color: inherit }
+    30% { border-color: @saved-color }
+    70% { border-color: @saved-color }
+    100% { border-color: inherit }
+  }
+
+  label {
+    .text-input-placeholder();
+    position: absolute;
+    top: 1em;
+    left: 0;
+    pointer-events: none;
+    transition: 0.2s ease all;
+  }
+
+  .input {
+    .text-input();
+    border: none;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 0.25em 0;
+    box-sizing: border-box;
+    width: 100%;
+    &:focus {
+      outline: none;
+      border-color: @active-color;
+    }
+    &.saved {
+      -webkit-animation: flash 1s ease 0s 1 normal;
+    }
+    &.invalid {
+      border-color: @invalid-color;
+    }
+  }
+  .input:focus ~ label,
+  .input:not(.empty) ~ label {
+    top: -2px;
+    .caption();
+  }
+  textarea {
+    overflow: hidden;
+    resize: none;
+    padding-bottom: 0.25em;
+    &:focus {
+    }
+  }
+}
