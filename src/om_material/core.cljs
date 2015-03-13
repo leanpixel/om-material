@@ -2,4 +2,4 @@
   (:require [om-fields.core]))
 
 
-(def ^:export editable om-fields.core/editable)
+(def ^:export input om-fields.core/input)
