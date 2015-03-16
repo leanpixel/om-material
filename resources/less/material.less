@@ -112,12 +112,14 @@
   font-size: 16px;
   font-weight: 400;
   color: @black-87;
+  line-height: 20px;
 }
 .text-input-placeholder () {
   font-family: "Roboto";
   font-size: 16px;
   font-weight: 400;
   color: @black-54;
+  line-height: 20px;
 }
 
 .shadow-1 {
@@ -199,4 +201,16 @@
     &:focus {
     }
   }
+
+  .autocomplete {
+    .results {
+      .text-input();
+      .result {
+        &.active {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
 }
