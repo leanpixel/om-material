@@ -1,10 +1,10 @@
-(defproject org.clojars.leanpixel/om-material "0.2.1"
+(defproject org.clojars.leanpixel/om-material "1.8.0-0"
   :description "FIXME: write description"
   :url "http://example.com/FIXME"
 
   :dependencies [[org.clojure/clojure "1.6.0"]
                  [org.clojure/clojurescript "0.0-3058"]
-                 [org.clojars.leanpixel/om-fields "1.7.0"]]
+                 [org.clojars.leanpixel/om-fields "1.8.0"]]
 
   :plugins [[jamesnvc/lein-lesscss "1.4.0"]]
 
